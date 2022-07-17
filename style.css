@@ -7,6 +7,8 @@ body {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -46,7 +48,7 @@ a {
 
 /* HEADER */
 
-header {
+header.main-header-nav {
   width: 100%;
   padding-top: 1.5rem;
 }
@@ -105,6 +107,9 @@ header {
 .primary-header-nav > ul > li.try-live {
   margin-left: auto;
   margin-right: 0;
+}
+
+.primary-header-nav > ul > li.try-live a {
   color: blue;
 }
 
@@ -137,4 +142,49 @@ header {
 
 .secondary-header-nav > ul > li:not(.active) a {
   color: black;
+}
+
+.secondary-header-nav > ul > li a {
+  font-size: 1rem;
+}
+
+/* ABOUT */
+
+main {
+  display: block;
+}
+
+header.about-page-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("https://ableton-production.imgix.net/about/header.jpg?auto=format&dpr=2&fit=crop&fm=jpg&h=450&ixjsv=1.1.3&q=50&w=1200");
+  margin-left: 8.33333vw;
+  margin-right: 8.33333vw;
+  margin-bottom: 8.33333vw;
+  min-height: 450px;
+  position: relative;
+}
+
+header.about-page-header h1 {
+  position: absolute;
+  color: #FD5948;
+  font-size: 115px;
+  left: 50%;
+  top: 50%;
+  margin-left: -215px;
+  margin-top: -52px;
+}
+
+.about-text {
+  width: 50vw; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8.33333vw;
+}
+ 
+.about-text > h1 {
+  font-size: 1.875rem;
+  line-height: 1.4;
+  margin-bottom: .7em;
 }
