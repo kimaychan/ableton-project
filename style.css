@@ -50,6 +50,12 @@ iframe {
   border: none;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+}
+
 /* HEADER */
 
 header.main-header-nav {
@@ -166,18 +172,18 @@ header.about-page-header {
   margin-left: 8.33333vw;
   margin-right: 8.33333vw;
   margin-bottom: 8.33333vw;
-  min-height: 450px;
+  min-height: calc(100vh - 120px);
   position: relative;
 }
 
-header.about-page-header h1 {
-  position: absolute;
-  color: #FD5948;
-  font-size: 115px;
-  left: 50%;
-  top: 50%;
+header > .about-header-ableton-logo {
+  width: 430px;
+  height: 104px;
   margin-left: -215px;
   margin-top: -52px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .about-text {
@@ -189,7 +195,7 @@ header.about-page-header h1 {
 
 .about-text > h1 {
   font-size: 1.875rem;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: .7em;
 }
 
@@ -208,13 +214,16 @@ header.about-page-header h1 {
 }
 
 .about-image-background {
-  width: 58.33333vw;
-  height: 58.33333vw;
   position: absolute;
-  background-color: #FBFFA7;
-  left: 41.66667vw;
   top: 0;
   z-index: 0;
+}
+
+.about-image-background.lemon {
+  width: 58.33333vw;
+  height: 58.33333vw;
+  left: 41.66667vw;
+  background-color: #FBFFA7;
 }
 
 .about-image-one {
@@ -272,4 +281,63 @@ header.about-page-header h1 {
   font-size: .875rem;
   line-height: 1.5;
   margin-top: .5em;
+}
+
+.about-image-collage--people {
+  position: relative;
+  margin-bottom: 8.33333vw;
+  padding: 8.33333vw;
+}
+
+.about-image-background.spearmint {
+  width: 58.33333vw;
+  height: 75vw;
+  left: 0;
+  background-color: #B6FFC0;
+}
+
+.collage-container {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+}
+
+.collage-container > .about-image-one--people {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("https://ableton-production.imgix.net/about/photo-3.jpg?dpr=2&fit=crop&h=360&ixjsv=1.1.3&q=50&w=480");
+  width: 33.33333vw;
+  height: 25vw;
+}
+
+.collage-container > .about-image-two--people {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("https://ableton-production.imgix.net/about/photo-4.jpg?dpr=2&fit=crop&h=360&ixjsv=1.1.3&q=50&w=480");
+  width: 33.33333vw;
+  height: 25vw;
+  margin-top: 8.33333vw;
+}
+
+.about-image-three--people {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  width: 41.66667vw;
+  height: 41.66667vw;
+  margin-left: 7.3333vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("https://ableton-production.imgix.net/about/photo-5.jpg?dpr=2&fit=crop&h=600&ixjsv=1.1.3&q=50&w=600");
+}
+
+.about-page--media {
+  margin-left: 8.33333vw;
+  margin-right: 8.33333vw;
+  width: auto;
 }
