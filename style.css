@@ -561,10 +561,51 @@ ul.footer-socials > li {
   padding-right: .625rem;
   width: 30%;
   padding-bottom: 4.16667vw;
-  padding-right: .625rem;
 }
 
 .newsletter-details {
   width: 40%;
   padding-bottom: 4.16667vw;
+}
+
+.footer-newsletter-form {
+  margin-top: 1em;
+}
+
+.footer-form-group {
+  display: flex;
+}
+
+.footer-form-field {
+  flex: 1;
+}
+
+.footer-form-field > input {
+  font-size: inherit;
+  width: 100%;
+  margin: 0;
+  padding: .4em .75em;
+  background: transparent;
+  background-color: transparent;
+  background-color: #eee;
+  border: 0;
+  user-select: none;
+  font-weight: normal;
+  border-radius: 0;
+  font-family: futura-pt,Avenir,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.footer-button {
+  display: inline-block;
+  margin: 0;
+  padding: .35em 1.5em;
+  font-family: futura-pt,Avenir,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  font-size: inherit;
+  color: #fff !important;
+  background: blue;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
