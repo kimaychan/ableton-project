@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <section>
+    <header>
+      <MainNav />
+    </header>
+  </section>
 </template>
+
+<script lang="ts" setup>
+
+</script>
