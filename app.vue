@@ -2,6 +2,7 @@
   <section>
     <header>
       <MainNav />
+      <SubNav />
     </header>
   </section>
 </template>

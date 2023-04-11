@@ -1,8 +1,10 @@
 <template>
   <nav>
     <div class="left-area">
-      <a href="javascript:;">[LOGO]</a>
-      <ul>
+      <span href="javascript:;" class="logo-container">
+        <img src="/logo.svg" class="logo" alt="logo">
+      </span>
+      <ul class="main-nav-links">
         <li>
           <nuxt-link to="#">Live</nuxt-link>
         </li>
@@ -25,16 +27,16 @@
           <nuxt-link to="#">Help</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="#">More +</nuxt-link>
+          <nuxt-link to="#" class="neutral">More +</nuxt-link>
         </li>
       </ul>
     </div>
     <div class="right-area">
-      <ul>
+      <ul class="secondary-nav-links">
         <li>
-          <nuxt-link to="#">Try Live for Free</nuxt-link>
+          <nuxt-link to="#" class="active">Try Live for Free</nuxt-link>
         </li>
-        <li>
+        <li class="login-link">
           <nuxt-link to="#">Log in or register</nuxt-link>
         </li>
       </ul>      
@@ -49,12 +51,12 @@ nav {
   justify-content: space-between;
   padding: 1.25rem 2.5rem;
   border-bottom: 2px solid #eee;
+  background: white;
   ul {
     display: flex;
-    li {
-      &:not(:first-child) {
-        margin: 0 15px;
-      }
+    align-items: center;
+    li:not(:first-child) {
+      margin: 0 15px;
     }
   }
 }
@@ -63,7 +65,41 @@ nav {
 }
 
 a {
-  font-size: 1.25rem;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 1.5;
+  &.neutral {
+    color: $neutral;
+  }
+  &.active {
+    color: blue;
+  }
+}
+
+.main-nav-links {
+  a {
+    font-weight: 500;
+  }
+}
+
+.secondary-nav-links {
+  a {
+    font-weight: 400;
+  }
+}
+
+.login-link {
+  a {
+    font-size: 14px;
+  }
+}
+
+.logo {
+  height: 28px;
+}
+
+.logo-container {
+  display: block;
+  height: 28px;
+  margin-right: 35px;
 }
 </style>
