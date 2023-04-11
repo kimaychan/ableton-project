@@ -19,6 +19,7 @@
 <style lang="scss" scoped>
 a {
   font-size: 14px;
+  font-weight: 600;
   &.active {
     color: $neutral;
   }
@@ -36,16 +37,18 @@ ul {
   nav {
     padding: 20px 40px;
     position: relative;
+    z-index: 2;
     &::after {
       content: '';
       position: absolute;
       z-index: -1;
       background-color: white;
-      opacity: .2;
+      opacity: .8;
       height: 100%;
       width: 100%;
       top: 0;
       left: 0;
+      z-index: -1;
     }
   }
 }
