@@ -1,9 +1,7 @@
 <template>
   <section>
     <header>
-      <div class="mainnav-wrapper">
-        <MainNav />
-      </div>
+      <MainNav />
       <div class="subnav-wrapper">
         <SubNav />
       </div>
@@ -16,14 +14,9 @@
 header {
   position: relative;
 }
-.mainnav-wrapper {
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
 .subnav-wrapper {
   width: 100%;
   position: sticky;
-  top: 70px;
+  top: 0;
 }
 </style>
