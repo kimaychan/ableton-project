@@ -13,7 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  margin: 0 120px;
+  margin: 0 8.3333vw;
   position: relative;
 }
 
