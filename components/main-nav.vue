@@ -1,10 +1,16 @@
+<script lang="ts" setup>
+
+const isNavExpanded = ref(false)
+
+</script>
+
 <template>
-  <nav>
+  <nav :class="{ 'expanded': isNavExpanded }">
     <div class="wrapper">
       <span href="javascript:;" class="logo-container">
-        <img src="/logo.svg" class="logo" alt="logo">
+        <main-nav-logo :color="isNavExpanded ? 'white' : 'black'" />
       </span>
-      <button class="menu">Menu</button>
+      <button class="menu" @click="isNavExpanded = !isNavExpanded">Menu</button>
       <div class="links">
         <ul class="main-nav-links">
           <li>
@@ -71,6 +77,7 @@ button.menu {
 nav {
   padding: 1.25rem 0;
   border-bottom: 2px solid #eee;
+  transition: height .12s ease-in;
 }
 
 .main-nav-links {
@@ -99,7 +106,6 @@ nav {
   display: block;
   height: 28px;
   margin: 0 1.25rem;
-  width: fit-content;
 }
 
 .logo-container, button.menu {
@@ -107,11 +113,42 @@ nav {
   vertical-align: middle;
 }
 
-.links {
-  display: none;
+nav {
+  .links {
+    overflow: hidden;
+  }
+  .links, .secondary-nav-links {
+    ul {
+      li {
+        padding: 1.25rem;
+      }
+    }
+  }
+  &.expanded {
+    padding-bottom: 0;
+    background-color: blue;
+    button {
+      color: white;
+    }
+    
+    .links {
+      height: inherit;
+    }
+    .links, .secondary-nav-links {
+      background-color: blue;
+      ul {
+        margin-top: 1rem;
+        li {
+          a {
+            color: white;  
+          }
+        }
+      }
+    }
+  }
 }
 
-ul,li {
+ul, li {
   height: fit-content;
 }
 
@@ -139,11 +176,16 @@ ul,li {
   button.menu {
     display: none;
   }
+  .logo-container {
+    margin-left: 2.5rem;
+  }
   .links {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: fit-content;
+    background-color: white;
   }
 }
 </style>
