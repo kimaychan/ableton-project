@@ -52,71 +52,12 @@ const isNavExpanded = ref(false)
 </template>
 
 <style lang="scss" scoped>
-a, button {
-  font-size: 18px;
-  line-height: 1;
-  display: block;
-  &.neutral {
-    color: $neutral;
-  }
-  &.active {
-    color: blue;
-  }
-}
-
-button.menu {
-  padding: 0;
-  border: 0;
-  background: none;
-  height: 27px;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-}
-
 nav {
-  padding: 1.25rem 0;
   border-bottom: 2px solid #eee;
   transition: height .12s ease-in;
 }
 
-.main-nav-links {
-  a {
-    font-weight: 500;
-  }
-}
-
-.secondary-nav-links {
-  a {
-    font-weight: 400;
-  }
-}
-
-.login-link {
-  a {
-    font-size: 14px;
-  }
-}
-
-.logo {
-  height: 28px;
-}
-
-.logo-container {
-  display: block;
-  height: 28px;
-  margin: 0 1.25rem;
-}
-
-.logo-container, button.menu {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-nav {
-  .links {
-    overflow: hidden;
-  }
+@media screen and (max-width: 999px) {
   .links, .secondary-nav-links {
     ul {
       li {
@@ -124,32 +65,101 @@ nav {
       }
     }
   }
-  &.expanded {
-    padding-bottom: 0;
-    background-color: blue;
-    button {
-      color: white;
+
+  a, button {
+    font-size: 18px;
+    line-height: 1;
+    display: block;
+    &.neutral {
+      color: $neutral;
     }
-    
-    .links {
-      height: inherit;
+    &.active {
+      color: blue;
     }
-    .links, .secondary-nav-links {
+  }
+  
+  button.menu {
+    padding: 0;
+    border: 0;
+    background: none;
+    height: 27px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  
+  nav {
+    padding: 1.25rem 0;
+  }
+  
+  .main-nav-links {
+    a {
+      font-weight: 500;
+    }
+  }
+  
+  .secondary-nav-links {
+    a {
+      font-weight: 400;
+    }
+  }
+  
+  .login-link {
+    a {
+      font-size: 14px;
+    }
+  }
+  
+  .logo {
+    height: 28px;
+  }
+  
+  .logo-container {
+    display: block;
+    height: 28px;
+    margin: 0 1.25rem;
+  }
+  
+  .logo-container, button.menu {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  nav {
+    &.expanded {
+      padding-bottom: 0;
       background-color: blue;
-      ul {
-        margin-top: 1rem;
-        li {
-          a {
-            color: white;  
+      button {
+        color: white;
+      }
+      
+      .links {
+        height: inherit;
+      }
+      .links, .secondary-nav-links {
+        background-color: blue;
+        ul {
+          margin-top: 1rem;
+          li {
+            a {
+              color: white;  
+            }
           }
         }
       }
     }
+    &:not(.expanded) {
+      .links {
+        height: 0;
+        overflow: hidden;
+      }
+    }
   }
-}
-
-ul, li {
-  height: fit-content;
+  
+  ul, li {
+    height: inherit;
+  }
+  
 }
 
 @media screen and (min-width: 1000px) {
@@ -163,21 +173,19 @@ ul, li {
       li {
         display: inline-block;
         vertical-align: middle;
+        padding: 0px;
         &:not(:first-child) {
           margin: 0 15px;
         }
       }
     }
-  } 
+  }
   .wrapper {
     display: flex;
     width: 100%;
   }
   button.menu {
     display: none;
-  }
-  .logo-container {
-    margin-left: 2.5rem;
   }
   .links {
     width: 100%;
@@ -186,6 +194,9 @@ ul, li {
     align-items: center;
     height: fit-content;
     background-color: white;
+  }
+  .logo-container {
+    margin: 0 1.25rem 0 2.5rem;
   }
 }
 </style>
