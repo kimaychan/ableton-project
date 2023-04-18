@@ -54,7 +54,10 @@ const isNavExpanded = ref(false)
 <style lang="scss" scoped>
 nav {
   border-bottom: 2px solid #eee;
-  transition: height .12s ease-in;
+}
+
+.wrapper {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 999px) {
@@ -127,17 +130,13 @@ nav {
   
   nav {
     &.expanded {
-      padding-bottom: 0;
       background-color: blue;
+      padding-bottom: 0;
       button {
         color: white;
       }
-      
-      .links {
-        height: inherit;
-      }
+
       .links, .secondary-nav-links {
-        background-color: blue;
         ul {
           margin-top: 1rem;
           li {
@@ -147,19 +146,16 @@ nav {
           }
         }
       }
+      .links {
+        width: 100%;
+      }
     }
     &:not(.expanded) {
-      .links {
-        height: 0;
-        overflow: hidden;
+      .wrapper {
+        height: 20px;
       }
     }
   }
-  
-  ul, li {
-    height: inherit;
-  }
-  
 }
 
 @media screen and (min-width: 1000px) {
@@ -192,7 +188,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: fit-content;
     background-color: white;
   }
   .logo-container {
