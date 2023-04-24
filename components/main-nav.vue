@@ -5,12 +5,14 @@ const isNavExpanded = ref(false)
 </script>
 
 <template>
-  <nav :class="{ 'expanded': isNavExpanded }">
-    <div class="wrapper">
+  <nav :class="['main-nav', { 'expanded': isNavExpanded }]">
+    <div class="menu-controller">
       <span href="javascript:;" class="logo-container">
         <main-nav-logo :color="isNavExpanded ? 'white' : 'black'" />
       </span>
       <button class="menu" @click="isNavExpanded = !isNavExpanded">Menu</button>
+    </div>
+    <div class="wrapper">
       <div class="links">
         <ul class="main-nav-links">
           <li>
@@ -54,105 +56,118 @@ const isNavExpanded = ref(false)
 <style lang="scss" scoped>
 nav {
   border-bottom: 2px solid #eee;
+  padding: 1.25rem 0;
+}
+
+.main-nav {
+  // position: relative;
+  height: 65px;
+}
+
+a, button {
+  font-size: 1rem;
+  line-height: 1.5;
+  display: block;
+  &.neutral {
+    color: $neutral;
+  }
+  &.active {
+    color: blue;
+  }
+}
+
+button.menu {
+  padding: 0;
+  border: 0;
+  background: none;
+  height: 27px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.main-nav-links {
+  a {
+    font-weight: 500;
+  }
+}
+
+.secondary-nav-links {
+  a {
+    font-weight: 400;
+  }
+}
+
+.login-link {
+  a {
+    font-size: 14px;
+  }
+}
+
+.logo-container {
+  display: block;
+  height: 28px;
+  margin-right: 1.25rem;
+}
+
+.logo-container, button.menu {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .wrapper {
   overflow: hidden;
+  position: absolute;
+  transition: transform .25s ease-in-out;
+  top: 0;
+  width: 100%;
+  // height: 100%;
+  z-index: 2;
+  background-color: blue;
+}
+
+.menu-controller {
+  position: absolute;
+  top: 1.25rem;
+  left: 20px;
+  z-index: 9999;
+  button {
+    transition: color .25s ease;
+  }
 }
 
 @media screen and (max-width: 999px) {
+
   .links, .secondary-nav-links {
     ul {
+      margin-top: 1rem;
       li {
         padding: 1.25rem;
+        a {
+          color: white;  
+        }
       }
     }
   }
-
-  a, button {
-    font-size: 18px;
-    line-height: 1;
-    display: block;
-    &.neutral {
-      color: $neutral;
-    }
-    &.active {
-      color: blue;
-    }
+  .links {
+    width: 100%;
   }
-  
-  button.menu {
-    padding: 0;
-    border: 0;
-    background: none;
-    height: 27px;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  
-  nav {
-    padding: 1.25rem 0;
-  }
-  
-  .main-nav-links {
-    a {
-      font-weight: 500;
-    }
-  }
-  
-  .secondary-nav-links {
-    a {
-      font-weight: 400;
-    }
-  }
-  
-  .login-link {
-    a {
-      font-size: 14px;
-    }
-  }
-  
-  .logo {
-    height: 28px;
-  }
-  
-  .logo-container {
-    display: block;
-    height: 28px;
-    margin: 0 1.25rem;
-  }
-  
-  .logo-container, button.menu {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
   nav {
     &.expanded {
-      background-color: blue;
       padding-bottom: 0;
       button {
         color: white;
-      }
-
-      .links, .secondary-nav-links {
-        ul {
-          margin-top: 1rem;
-          li {
-            a {
-              color: white;  
-            }
-          }
-        }
-      }
-      .links {
-        width: 100%;
+      }  
+      .wrapper {
+        padding-top: 30px;
+        transform: translateY(0);
+        // height: 100%;
       }
     }
     &:not(.expanded) {
       .wrapper {
-        height: 20px;
+        transform: translateY(-100%);
+        // height: 0px;
       }
     }
   }
@@ -163,7 +178,6 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1.25rem 2.5rem 1.25rem 0;
     background: white;
     ul {
       li {
@@ -179,6 +193,8 @@ nav {
   .wrapper {
     display: flex;
     width: 100%;
+    padding: 1.25rem 2.5rem 1.25rem 6.5rem;
+    background-color: white;
   }
   button.menu {
     display: none;
@@ -190,8 +206,8 @@ nav {
     align-items: center;
     background-color: white;
   }
-  .logo-container {
-    margin: 0 1.25rem 0 2.5rem;
+  .menu-controller {
+    left: 2.25rem;
   }
 }
 </style>

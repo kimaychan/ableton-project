@@ -35,9 +35,9 @@ ul {
 
 .sub-nav {
   nav {
-    padding: 20px 40px;
+    padding: 1rem 1.25rem;
     position: relative;
-    z-index: 2;
+    z-index: 0;
     &::after {
       content: '';
       position: absolute;
@@ -49,6 +49,15 @@ ul {
       top: 0;
       left: 0;
       z-index: -1;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .sub-nav {
+    nav {
+      padding: 20px 40px;
     }
   }
 }

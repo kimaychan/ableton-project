@@ -5,7 +5,7 @@
       <div class="subnav-wrapper">
         <SubNav />
       </div>
-      <TheBanner />
+      <TheBanner class="banner"/>
     </header>
   </section>
 </template>
@@ -14,9 +14,23 @@
 header {
   position: relative;
 }
-.subnav-wrapper {
+
+.sub-nav {
   width: 100%;
+  z-index: 1;
+}
+
+.main-nav {
+  width: 100%;
+  z-index: 9999;
+}
+
+.sub-nav {
   position: sticky;
   top: 0;
+}
+
+
+@media screen and (min-width: 1000px) {
 }
 </style>
