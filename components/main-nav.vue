@@ -1,20 +1,18 @@
 <script lang="ts" setup>
-
 const isNavExpanded = ref(false)
-
 </script>
 
 <template>
   <nav :class="['main-nav', { 'expanded': isNavExpanded }]">
     <div class="menu-controller">
       <span href="javascript:;" class="logo-container">
-        <main-nav-logo :color="isNavExpanded ? 'white' : 'black'" />
+        <main-nav-logo class="logo-svg" />
       </span>
       <button class="menu" @click="isNavExpanded = !isNavExpanded">Menu</button>
     </div>
     <div class="wrapper">
       <div class="links">
-        <ul class="main-nav-links">
+        <ul class="primary-links">
           <li>
             <nuxt-link to="#">Live</nuxt-link>
           </li>
@@ -36,11 +34,13 @@ const isNavExpanded = ref(false)
           <li>
             <nuxt-link to="#">Help</nuxt-link>
           </li>
-          <li>
-            <nuxt-link to="#" class="neutral">More +</nuxt-link>
+          <li class="expand-more">
+            <nuxt-link to="#" class="neutral" @click="isNavExpanded = !isNavExpanded">
+              More <span v-if="isNavExpanded">-</span><span v-else>+</span>
+            </nuxt-link>
           </li>
         </ul>
-        <ul class="secondary-nav-links">
+        <ul>
           <li>
             <nuxt-link to="#" class="active">Try Live for Free</nuxt-link>
           </li>
@@ -48,7 +48,19 @@ const isNavExpanded = ref(false)
             <nuxt-link to="#">Log in or register</nuxt-link>
           </li>
         </ul>
-      </div>      
+      </div>
+      <div class="more-info">
+        <h3>More on Ableton.com:</h3>
+        <ul class="links">
+          <li><nuxt-link to="#">Blog</nuxt-link></li>
+          <li><nuxt-link to="#">Ableton for the Classroom</nuxt-link></li>
+          <li><nuxt-link to="#">Ableton for Colleges and Universities</nuxt-link></li>
+          <li><nuxt-link to="#">Certified Training</nuxt-link></li>
+          <li><nuxt-link to="#" class="neutral">About Ableton</nuxt-link></li>
+          <li><nuxt-link to="#">Jobs</nuxt-link></li>
+          <li><nuxt-link to="#">Apprenticeships</nuxt-link></li>
+        </ul>
+      </div>     
     </div>
   </nav>
 </template>
@@ -56,11 +68,10 @@ const isNavExpanded = ref(false)
 <style lang="scss" scoped>
 nav {
   border-bottom: 2px solid #eee;
-  padding: 1.25rem 0;
+  // padding: 1.25rem 0;
 }
 
 .main-nav {
-  // position: relative;
   height: 65px;
 }
 
@@ -86,11 +97,11 @@ button.menu {
   cursor: pointer;
 }
 
-.main-nav-links {
-  a {
-    font-weight: 500;
-  }
-}
+// .main-nav-links {
+//   a {
+//     font-weight: 500;
+//   }
+// }
 
 .secondary-nav-links {
   a {
@@ -117,13 +128,14 @@ button.menu {
 
 .wrapper {
   overflow: hidden;
-  position: absolute;
+  // position: absolute;
   transition: transform .25s ease-in-out;
-  top: 0;
+  // top: 0;
   width: 100%;
   // height: 100%;
-  z-index: 2;
+  // z-index: 2;
   background-color: blue;
+  height: fit-content;
 }
 
 .menu-controller {
@@ -137,8 +149,14 @@ button.menu {
 }
 
 @media screen and (max-width: 999px) {
+  .more-info {
+    display: none;
+  }
 
-  .links, .secondary-nav-links {
+  .expand-more {
+    display: none;
+  }
+  .links {
     ul {
       margin-top: 1rem;
       li {
@@ -152,12 +170,20 @@ button.menu {
   .links {
     width: 100%;
   }
+  .wrapper {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
   nav {
     &.expanded {
       padding-bottom: 0;
       button {
         color: white;
-      }  
+      }
+      .logo-svg {
+        fill: white;
+      }
       .wrapper {
         padding-top: 30px;
         transform: translateY(0);
@@ -166,8 +192,9 @@ button.menu {
     }
     &:not(.expanded) {
       .wrapper {
-        transform: translateY(-100%);
-        // height: 0px;
+        transform: translateY(-110%);
+        // position: static;
+        // height: 65px;
       }
     }
   }
@@ -184,17 +211,30 @@ button.menu {
         display: inline-block;
         vertical-align: middle;
         padding: 0px;
-        &:not(:first-child) {
-          margin: 0 15px;
-        }
+        margin: {
+          top: 0;
+          bottom: 1.25rem;
+          left: 0;
+          right: 15px;
+        };
+      }
+    }
+    &:not(.expanded) {
+      .more-info {
+        display:none;
       }
     }
   }
   .wrapper {
     display: flex;
     width: 100%;
-    padding: 1.25rem 2.5rem 1.25rem 6.5rem;
+    padding: 1.25rem 2.5rem 0 0;
     background-color: white;
+    flex-direction: column;
+    position: static;
+  }
+  .main-nav {
+    height: auto;
   }
   button.menu {
     display: none;
@@ -206,8 +246,24 @@ button.menu {
     align-items: center;
     background-color: white;
   }
+  .primary-links {
+    margin-left: 6.5rem;
+    li {
+      margin-bottom: 1.25rem;
+    }
+  }
   .menu-controller {
     left: 2.25rem;
+  }
+  .more-info {
+    padding: 1.2rem 2.5rem;
+    h3 {
+      font-size: 1.8rem;
+      padding-bottom: 0.3em;
+    }
+    ul:first-of-type {
+      max-width: 1105px;
+    }
   }
 }
 </style>

@@ -12,7 +12,7 @@
 
 <style lang="scss" scoped>
 header {
-  position: relative;
+  // position: relative;
 }
 
 .sub-nav {
@@ -25,12 +25,9 @@ header {
   z-index: 9999;
 }
 
-.sub-nav {
-  position: sticky;
-  top: 0;
-}
+// .sub-nav {
+//   position: sticky;
+//   top: 0;
+// }
 
-
-@media screen and (min-width: 1000px) {
-}
 </style>
