@@ -60,6 +60,49 @@ const isNavExpanded = ref(false)
           <li><nuxt-link to="#">Jobs</nuxt-link></li>
           <li><nuxt-link to="#">Apprenticeships</nuxt-link></li>
         </ul>
+        <h3>More from Ableton.com:</h3>
+        <ul class="main-nav-group-links">
+          <li>
+            <nuxt-link to="#">
+              <div>
+                <h4>Loop</h4>
+                <p>Watch Talks, Performances, and
+                  Features from Ableton's Summit for
+                  Music Makers
+                </p>
+              </div>
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#">
+              <div>
+                <h4>Learning Music</h4>
+                <p>Learn the fundamentals of music making right in your browser
+                </p>
+              </div>
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#">
+              <div>
+                <h4>Learning Synths</h4>
+                <p>Get started with synthesis using a web-
+                  based synth and accompanying 
+                  lessons.</p>
+              </div>
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#">
+              <div>
+                <h4>Making Music</h4>
+                <p>Some tips from 74 Creative Strategies
+                  for Electronic Producers.
+                </p>
+              </div>
+            </nuxt-link>
+          </li>
+        </ul>
       </div>     
     </div>
   </nav>
@@ -150,11 +193,36 @@ button.menu {
 
 @media screen and (max-width: 999px) {
   .more-info {
-    display: none;
+    padding: {
+      left: 1.25rem;
+      top: .625rem;
+    }
+    a:not(.neutral), h3 {
+      color: white;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      &:not(:first-of-type) {
+        margin-top: 20px;
+      }
+    }
+    .links {
+      > * {
+        padding-bottom: 20px;
+      }
+    }
   }
 
   .expand-more {
     display: none;
+  }
+
+  .main-nav-group-links {
+    display: flex;
+    a {
+      font-size: .875rem;
+    }
   }
   .links {
     ul {
@@ -263,6 +331,18 @@ button.menu {
     }
     ul:first-of-type {
       max-width: 1105px;
+    }
+  }
+}
+
+.main-nav-group-links {
+  >* {
+    max-width: 25%;
+    margin: 0;
+    padding-right: 20px;
+    font-size: 1.25rem;
+    &:not(:first-child) {
+      padding-left: 20px;
     }
   }
 }
