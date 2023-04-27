@@ -140,11 +140,9 @@ button.menu {
   cursor: pointer;
 }
 
-// .main-nav-links {
-//   a {
-//     font-weight: 500;
-//   }
-// }
+a {
+  line-height: 1.5;
+}
 
 .secondary-nav-links {
   a {
@@ -187,7 +185,7 @@ button.menu {
   left: 20px;
   z-index: 9999;
   button {
-    transition: color .25s ease;
+    transition: color .1s ease;
   }
 }
 
@@ -209,7 +207,10 @@ button.menu {
     }
     .links {
       > * {
-        padding-bottom: 20px;
+        margin-bottom: 1em;
+      }
+      a {
+        font-size: 12px;
       }
     }
   }
@@ -241,7 +242,7 @@ button.menu {
   .wrapper {
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 999;
   }
   nav {
     &.expanded {
@@ -253,16 +254,13 @@ button.menu {
         fill: white;
       }
       .wrapper {
-        padding-top: 30px;
+        padding: 30px 0;
         transform: translateY(0);
-        // height: 100%;
       }
     }
     &:not(.expanded) {
       .wrapper {
         transform: translateY(-110%);
-        // position: static;
-        // height: 65px;
       }
     }
   }

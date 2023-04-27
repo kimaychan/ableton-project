@@ -34,6 +34,7 @@ ul {
 }
 
 .sub-nav {
+  height: 3.75rem;
   nav {
     padding: 1rem 1.25rem;
     position: relative;
