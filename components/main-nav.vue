@@ -109,13 +109,9 @@ const isNavExpanded = ref(false)
 </template>
 
 <style lang="scss" scoped>
-nav {
-  border-bottom: 2px solid #eee;
-  // padding: 1.25rem 0;
-}
-
 .main-nav {
   height: 65px;
+  border-bottom: 2px solid #eee;
 }
 
 a, button {
@@ -169,12 +165,8 @@ a {
 
 .wrapper {
   overflow: hidden;
-  // position: absolute;
   transition: transform .25s ease-in-out;
-  // top: 0;
   width: 100%;
-  // height: 100%;
-  // z-index: 2;
   background-color: blue;
   height: fit-content;
 }
@@ -322,7 +314,7 @@ a {
     left: 2.25rem;
   }
   .more-info {
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 2.5rem 2.5rem;
     h3 {
       font-size: 1.8rem;
       padding-bottom: 0.3em;
@@ -334,6 +326,7 @@ a {
 }
 
 .main-nav-group-links {
+  padding-top: 2.625rem;
   >* {
     max-width: 25%;
     margin: 0;

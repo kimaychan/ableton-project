@@ -26,6 +26,6 @@ h1 {
 }
 
 .main-text {
-  width: 66.66667vw;
+  width: 720px;
 }
 </style>
