@@ -326,7 +326,7 @@ a {
 }
 
 .main-nav-group-links {
-  padding-top: 2.625rem;
+  padding-top: 0.3em;
   >* {
     max-width: 25%;
     margin: 0;
