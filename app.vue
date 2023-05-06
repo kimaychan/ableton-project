@@ -22,83 +22,55 @@
         class="page-text"
         heading="Making music isn’t easy. It takes time, effort, and learning. But when you’re in the flow, it’s incredibly rewarding."
         message="We feel the same way about making Ableton products. The driving force behind Ableton is our passion for what we make, and the people we make it for."></main-text-content>
+    
+      <div class="video-container">
+        <div class="video">
+          <iframe src="/placeholder-video.mp4" width="720" height="405" frameborder="0">
+            <!-- video -->
+          </iframe>
+          <caption>
+            Why Ableton - Juanpe Bolivar
+          </caption>
+        </div>
+      </div>
+      <main-text-content
+        class="page-text"
+        heading="We are more than 350 people from 30 different countries divided between our headquarters in Berlin and our offices in Los Angeles and Tokyo."
+        message="Most of us are active musicians, producers, and DJs, and many of us use Live and Push every day. We come from a wide range of cultural and professional backgrounds. Some of us have PhDs, some are self-taught, and most of us are somewhere in between. What connects us is the shared belief that each of us has the skills and knowledge to contribute to something big: helping to shape the future of music culture."></main-text-content>
+      <div class="people">
+        <div class="bg-mint"></div>
+        <div class="collage">
+          <div class="image photo-3"></div>
+          <div class="image photo-4"></div>
+        </div>
+        <div class="image photo-5"></div>
+      </div>
+      <main-text-content
+        class="page-text"
+        heading="We believe it takes focus to create truly outstanding instruments. We only work on a few products and we strive to make them great."
+        message="Rather than having a one-size-fits-all process, we try to give our people what they need to work their magic and grow. We’ve learned that achieving the best results comes from building teams that are richly diverse, and thus able to explore problems from a wider set of perspectives. We don’t always agree with each other, but opinion and debate are valued and openly encouraged."></main-text-content>
+      <div class="about-media">
+        <img src="./poster-meet-the-makers.jpg" alt="Media">
+      </div>
+      <main-text-content
+        class="page-text"
+        heading="We’re passionate about what we do, but we’re equally passionate about improving who we are.">
+        <p>We work hard to foster an environment where people can grow both personally and professionally, and we strive to create a wealth of opportunities to learn from and with each other.</p>
+        <p>Alongside an internal training program, employees are actively supported in acquiring new knowledge and skills, and coached on applying these in their daily work. In addition, staff-organized development and music salons are a chance to discuss new technologies, production techniques and best practices.</p>
+      </main-text-content>
+      <div class="improvement">
+        <div class="bg-lavender"></div>
+        <div class="photo-6"></div>
+        <div class="photo-7"></div>
+      </div>
+      <main-text-content
+        class="page-text"
+        heading="We want our employees to love it here. Since we’re looking for exceptional talent from around the world, we will do everything we can to make your transition as easy as possible."
+        message="If you're joining us in Berlin, we'll help with relocation and paperwork. We’ll even provide you with free German or English lessons. Plus, working in Germany means you can expect comprehensive health insurance for you and your family, as well as generous maternity and paternity leave. Office hours are flexible, but it’s not all work; we have several company and team outings throughout the year as well as a variety of fun, informal small-group activities."></main-text-content>
     </section>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.sub-nav {
-  width: 100%;
-  z-index: 1;
-}
-
-header {
-  position: relative;
-  margin-bottom: 8.33333vw;
-}
-
-.subnav-wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 4;
-}
-
-.main-nav {
-  width: 100%;
-}
-
-span.active {
-  color: blue;
-}
-
-.main-content {
-  // display: flex;
-  // justify-content: center;
-  .page-text {
-    margin: {
-      left: auto;
-      right: auto;
-      bottom: 8.33333vw;
-    }
-  }
-}
-
-.products {
-  width: 100%;
-  height: 839px;
-  position: relative;
-  padding-bottom: 8.33333vw;
-  margin-bottom: 8.33333vw;
-  .bg-lemonade {
-    position: absolute;
-    z-index: 0;
-    right: 0;
-    height: 58.33333vw;
-    width: 58.33333vw;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-  }
-  .product {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    &.primary {
-      left: 8.33333vw;
-      width: 41.6vw;
-      height: 41.6vw;
-      z-index: 2;
-    }
-    &.secondary {
-      right: 8.33333vw;
-      width: 33.33333vw;
-      height: 25vw;
-    }
-  }
-}
-
-.bg-lemonade {
-  background-color: $lemonade;
-}
+@import './app.scss';
 </style>

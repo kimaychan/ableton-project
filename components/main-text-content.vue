@@ -20,12 +20,14 @@ const props = defineProps<MainTextContentProps>()
 
 <style lang="scss" scoped>
 h1 {
-  font-size: 1.25rem;
-  line-height: 1.5;
   margin-bottom: .7em;
+  font-size: 1.875rem;
+  line-height: 1.4;
 }
 
 .main-text {
   width: 720px;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 </style>
